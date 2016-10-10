@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "neroao.demobox.grpcdemo.streamrpc";
+option java_outer_classname = "StreamRpcProto";
+
+package streamrpc;
+
+service StreamRpc {
+	
+	rpc say (RequestMessage) returns (ResponseMessage) {}
+	
+	rpc sayToSomeBody (SomebodyNames) returns (stream Message) {}
+	
+	rpc someBodySay (stream RequestMessage) returns (ResponseSummary) {}
+	
+	rpc StreamChat (stream MessageCount) returns (stream MessageCount) {}
+}
+
+message RequestMessage {
+	string name = 1;
+	string message = 2;
+}
+
+message ResponseMessage {
+	string repMessage = 1;
+}
+
+message SomebodyNames {
+	string names = 1;
+}
+
+message Message{
+	string message = 1;
+}
+
+message ResponseSummary {
+	string messageCount = 1;
+}
+
+message MessageCount {
+	string name = 1;
+	string message =2;
+}

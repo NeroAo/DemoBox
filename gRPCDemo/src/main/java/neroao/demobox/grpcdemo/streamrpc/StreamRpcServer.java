@@ -76,7 +76,7 @@ public class StreamRpcServer {
 						public void onNext(RequestMessage value) {
 							String name = value.getName();
 							String message = value.getMessage();
-							messageSum = messageSum + name +" say : "+message +"/n";
+							messageSum = messageSum + name +" say : "+message +"!";
 						}
 
 						@Override

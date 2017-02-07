@@ -58,7 +58,7 @@ public class StreamRpcClient {
 		}
 	}
 	
-	public void someBodySqy() throws InterruptedException{
+	public void someBodySay() throws InterruptedException{
 		final CountDownLatch finishLatch = new CountDownLatch(1);
 		StreamObserver<ResponseSummary> responseObserver = new StreamObserver<ResponseSummary>(){
 
@@ -144,7 +144,7 @@ public class StreamRpcClient {
 		try{
 			client.say("nero", "Hello");
 			client.sayToSomeBody("tiger,kitty,nero");
-			client.someBodySqy();
+			client.someBodySay();
 			client.streamChat();
 		}finally {
 		      client.shutdown();

@@ -6,9 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-//@EnableFeignClients
 @EnableDiscoveryClient
-//@ComponentScan(basePackages={"neroao.demobox"})
 
 public class FeginApplication {
 	

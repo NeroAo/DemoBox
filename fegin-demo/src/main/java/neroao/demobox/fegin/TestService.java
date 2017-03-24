@@ -32,6 +32,8 @@ public class TestService {
     public String getHello(@PathVariable("name") String name) {
 		/*computeClient = Feign.builder().
 				contract(new HystrixDelegatingContract(new SpringMvcContract())).target(TestServiceApi.class,"http://eureka.client");*/
+		
+		
 		Builder feignBuilder= Feign.builder().decoder(new ResponseEntityDecoder(new SpringDecoder(new ObjectFactory<HttpMessageConverters>(){
 			public HttpMessageConverters getObject() throws BeansException {
 				return new HttpMessageConverters();
